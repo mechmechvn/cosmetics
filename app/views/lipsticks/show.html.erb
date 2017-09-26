@@ -1,0 +1,17 @@
+
+    <tr><%= @lipstick.name %></tr></br>
+
+    <%= image_tag(@lipstick.image_url) if @lipstick.image? %></br>
+
+    <tr>
+      <th>Brand: </th>
+      <td><%= @lipstick.brand%> </td>
+    </tr></br>
+    <tr>
+      <th>Description: </th>
+      <td><%= @lipstick.description %> </td>
+    </tr></br>
+    <tr>
+      <th>Price: </th>
+      <td><%= @lipstick.price %> </td>
+    </tr>
