@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <h1>New lipstick</h1>
+      <%= form_for(@lipstick) do |f| %>
+        <table class="table table-striped table-condensed">
+          <tr>
+            <td><%= f.label :name%></td>
+            <td><%= f.text_field :name, class: 'form-control', placeholder: 'Name ' %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :brand %></td>
+            <td><%= f.text_field :brand, class: 'form-control', placeholder: 'Brand' %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :is_best_seller %></td>
+            <td><%= f.select :is_best_seller, ['true', 'false']%></td>
+          </tr>
+          <tr>
+            <td><%= f.label :description %></td>
+            <td><%= f.text_field :description, class: 'form-control', placeholder: 'Description' %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :price %></td>
+            <td><%= f.number_field :price, class: 'form-control', placeholder: 'Price' %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :image %></td>
+            <td><%= f.file_field :image, id: :lipstick_image, placeholder: 'Add an image' %></td>
+          </tr>
+          <tr>
+            <td colspan="2"><%= f.submit class: 'btn btn-success pull-right'%></td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>

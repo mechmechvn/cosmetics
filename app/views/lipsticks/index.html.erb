@@ -1,0 +1,14 @@
+<h1>Lipsticks</h1>
+
+<% @lipsticks.in_groups_of(3) do |group| %>
+  <div class="row">
+    <% group.compact.each do |lipstick| %>
+
+      <div class="col-md-4">
+        <%= image_tag lipstick.image_url(:thumb) if lipstick.image? %>
+        <h4><%= link_to lipstick.name, @lipstick %></h4>
+        <%= lipstick.description %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

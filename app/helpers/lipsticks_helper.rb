@@ -1,0 +1,2 @@
+module LipsticksHelper
+end
