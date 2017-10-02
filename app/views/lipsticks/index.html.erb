@@ -3,7 +3,7 @@
       <div class="col-md-4 col-md-offset-4">
         <h1>Lipsticks</h1>
         <% @lipsticks.in_groups_of(3) do |group| %>
-        <table class="table table-striped table-condensed">
+        <table class="table table-condensed">
           <%=group.compact.each do |lipstick| %>
           <%= image_tag lipstick.image_url(:thumb) if lipstick.image? %>
           <h4><%= link_to lipstick.name, @lipstick %></h4>
