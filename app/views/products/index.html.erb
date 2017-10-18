@@ -1,6 +1,6 @@
 <div class="container">
-    <h1>Best Seller </h1></br>
-      <% @best_seller_lipsticks.in_groups_of(3) do |group| %>
+    <h1> Listing lipsticks </h1></br>
+      <% @lipsticks.in_groups_of(3) do |group| %>
         <div class="row">
           <% group.compact.each do |lipstick| %>
             <div class="col-md-4">
@@ -8,12 +8,15 @@
               <h4><%= link_to lipstick.name, @lipstick %></h4>
               <%= lipstick.brand %></br>
               <%= lipstick.description %></br>
-              <%= lipstick.price %>
+              <%= link_to 'Show', lipstick_path(lipstick.id) %>
             </div>
           <% end %>
+
         </div>
       <% end %>
-      <%= will_paginate @products %>
     </div>
   </div>
 </div>
+
+
+
