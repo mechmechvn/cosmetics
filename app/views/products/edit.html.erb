@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <h1>New product</h1>
+      <%= form_for(@product) do |f| %>
+
+        <div class="field">
+          <%= f.label :name%>
+          <%= f.text_field :name, class: 'form-control', placeholder: 'Name ' %>
+        </div></br>
+
+        <div class="field">
+          <%= f.label :brand_id %>
+          <%= f.select :brand_id, @brands.collect { |a| [a.name, a.id] }, {}, {class: 'form-control' } %>
+        </div></br>
+
+        <div class="field">
+          <%= f.label :category_id %>
+          <%= f.select :category_id, @categories.collect { |a| [a.name, a.id] }, {}, {class: 'form-control' } %>
+        </div></br>
+
+        <div class="field">
+          <%= f.label :description %>
+          <%= f.text_area :description, class: 'form-control', placeholder: 'Description' %>
+        </div></br>
+
+        <div class="field">
+          <%= f.label :price %>
+          <%= f.number_field :price, class: 'form-control', placeholder: 'Price' %>
+        </div></br>
+
+        <div class="field">
+          <%= f.label :sale_price %>
+          <%= f.number_field :sale_price, class: 'form-control', placeholder: 'Sale Price' %>
+        </div></br>
+
+        <div class="actions">
+          <%= f.label :image %>
+          <%= f.file_field :image, id: :product_image %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit class: 'btn btn-success pull-right'%>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>
