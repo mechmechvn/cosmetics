@@ -1,23 +1,28 @@
 class ProductsController < ApplicationController
 
   def index
-    @product = Product.all
+    @products = Product.all
+    @brands = Brand.all
+    @categories = Category.all
   end
 
   def new
     @product = Product.new
     @brands = Brand.all
     @categories = Category.all
-
   end
 
   def create
     @product = Product.new(product_params)
+    @product.user_id = 1
+    binding.pry
     if @product.save
       uploader = ImageUpLoader.new
       uploader.store!(params[:image])
       redirect_to products_path
     else
+      @brands = Brand.all
+      @categories = Category.all
       render 'new'
     end
   end
@@ -27,6 +32,8 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @brands = Brand.all
+    @categories = Category.all
     @product = Product.find(params[:id])
   end
 

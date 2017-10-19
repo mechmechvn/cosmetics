@@ -1,14 +1,14 @@
 <div class="container">
-    <h1> Listing lipsticks </h1></br>
-      <% @lipsticks.in_groups_of(3) do |group| %>
+    <h1> Listing product </h1></br>
+      <% @products.in_groups_of(3) do |group| %>
         <div class="row">
-          <% group.compact.each do |lipstick| %>
+          <% group.compact.each do |product| %>
             <div class="col-md-4">
-              <%= image_tag lipstick.image_url(:thumb) if lipstick.image? %>
-              <h4><%= link_to lipstick.name, @lipstick %></h4>
-              <%= lipstick.brand %></br>
-              <%= lipstick.description %></br>
-              <%= link_to 'Show', lipstick_path(lipstick.id) %>
+              <%#= image_tag product.image_url(:thumb) if product.image? %>
+              <h4><%= link_to product.name, @product %></h4>
+              <%= product.brand.name %></br>
+              <%= product.description %></br>
+              <%= link_to 'Show', product_path(product.id) %>
             </div>
           <% end %>
 
